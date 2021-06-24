@@ -1,0 +1,28 @@
+{
+  "name": "@cevue/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "cevue": "bin/cevue.js"
+  },
+  "keywords": [
+    "vue",
+    "element-ui",
+    "echart",
+    "strap",
+    "lib"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "child_process": "^1.0.2",
+    "commander": "^7.2.0",
+    "inquirer": "^8.1.1",
+    "ora": "^5.4.1"
+  }
+}
