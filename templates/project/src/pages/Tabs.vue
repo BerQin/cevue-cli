@@ -118,7 +118,7 @@
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 .message-title{
     cursor: pointer;
 }

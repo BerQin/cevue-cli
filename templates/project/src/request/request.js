@@ -58,7 +58,7 @@ axios.interceptors.response.use(
 
 /**
  * @func axios的二次封装
- * @param method-请求方法，url-接口地址，data-请求参数
+ * @param method-请求方法，url-接口地址，data-请求参数 config配置参数 rouleData路由拼接参数，noCatch不适用默认的catch拦截提示
  */
 const request = (url, data = {}, method = "GET", config = {
   rouleData: '',

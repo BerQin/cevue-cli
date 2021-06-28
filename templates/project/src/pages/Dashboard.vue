@@ -105,6 +105,7 @@
                 </el-card>
             </el-col>
         </el-row>
+        <!-- echarts -->
         <el-row :gutter="20">
             <el-col :span="12">
                 <el-card shadow="hover">
@@ -117,11 +118,14 @@
                 </el-card>
             </el-col>
         </el-row>
+        <!-- endecharts -->
     </div>
 </template>
 
 <script>
+// echarts
 import Echart from '@/components/Echart';
+// endecharts
 
 export default {
     name: 'dashboard',
@@ -184,6 +188,8 @@ export default {
                     value: 1065
                 }
             ],
+            
+            // echarts
             options: {
                 title: {
                     text: '指定数据到坐标轴的映射'
@@ -291,6 +297,7 @@ export default {
                     }
                 ]
             }
+            // endecharts
         };
     },
     computed: {
@@ -299,7 +306,9 @@ export default {
         }
     },
     components: {
+        // echarts
         Echart
+        // endecharts
     },
     methods: {
         changeDate() {

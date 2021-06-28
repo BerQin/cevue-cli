@@ -38,11 +38,13 @@ export default new Router({
                     component: () => import(/* webpackChunkName: "tabs" */ '../pages/Tabs.vue'),
                     meta: { title: 'tab选项卡' }
                 },
+                // echarts
                 {
                     path: '/index/charts',
                     component: () => import(/* webpackChunkName: "chart" */ '../pages/BaseCharts.vue'),
-                    meta: { title: 'schart图表' }
+                    meta: { title: 'charts图表' }
                 },
+                // endecharts
                 {
                   path: '/form',
                   redirect: '/form/index'
@@ -52,6 +54,7 @@ export default new Router({
                     component: () => import(/* webpackChunkName: "form" */ '../pages/BaseForm.vue'),
                     meta: { title: '基本表单' }
                 },
+                // mavon-editor
                 {
                     // 富文本编辑器组件
                     path: '/form/editor',
@@ -64,6 +67,7 @@ export default new Router({
                     component: () => import(/* webpackChunkName: "markdown" */ '../pages/Markdown.vue'),
                     meta: { title: 'markdown编辑器' }
                 },
+                // endmavon-editor
                 {
                     // 图片上传组件
                     path: '/form/upload',
@@ -101,12 +105,14 @@ export default new Router({
                     component: () => import(/* webpackChunkName: "404" */ '../pages/404.vue'),
                     meta: { title: '404' }
                 },
+                // vue-i18n
                 {
                     // 国际化页面
                     path: '/i18n',
                     component: () => import(/* webpackChunkName: "permission" */ '../pages/I18n.vue'),
                     meta: { title: '国际化页面', permission: true }
                 },
+                // endvue-i18n
                 {
                     path: '/403',
                     component: () => import(/* webpackChunkName: "403" */ '../pages/403.vue'),

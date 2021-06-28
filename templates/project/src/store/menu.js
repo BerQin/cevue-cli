@@ -19,11 +19,13 @@ export default [
             index: '/index/tabs',
             title: 'tab选项卡'
         },
+        // echarts
         {
             icon: 'el-icon-pie-chart',
             index: '/index/charts',
             title: 'echart图表'
         },
+        // endecharts
         {
             icon: 'el-icon-lx-emoji',
             index: '/index/icon',
@@ -40,6 +42,7 @@ export default [
               index: '/form/index',
               title: '基本表单'
           },
+        // mavon-editor
           {
               index: '3-2',
               title: '三级菜单',
@@ -54,6 +57,8 @@ export default [
                   }
               ]
           },
+          
+        // endmavon-editor
           {
               index: '/form/upload',
               title: '文件上传'
@@ -90,9 +95,11 @@ export default [
           }
       ]
   },
+  // vue-i18n
   {
     icon: 'el-icon-lx-warn',
     index: '/i18n',
     title: '国际化',
   }
+  // endvue-i18n
 ]

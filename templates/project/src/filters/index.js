@@ -1,10 +1,14 @@
+// moment-timezone
 import moment from 'moment-timezone';
+// endmoment-timezone
 
 const filters = {
+  // moment-timezone
   // 格式化时间
   formateDate: (value, string) => {
     return moment(value).format(string);
   },
+  // endmoment-timezone
   // 倒计时
   LowDate: (value) => {
     let h = 0;

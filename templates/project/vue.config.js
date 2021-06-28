@@ -9,7 +9,9 @@ module.exports = {
     assetsDir: 'static',
     productionSourceMap: false,
     devServer: {
+        // port
         port: 8090
+        // endport
         // proxy: {
         //     '/api':{
         //         target:'http://116.236.59.98:9528',
@@ -71,6 +73,7 @@ module.exports = {
                             reuseExistingChunk: true,
                             enforce: true
                         },
+                        // echarts
                         echarts: {
                             test: /[\\/]node_modules[\\/](vue-)?echarts[\\/]/,
                             name: 'chunk-echarts',
@@ -79,6 +82,8 @@ module.exports = {
                             reuseExistingChunk: true,
                             enforce: true
                         },
+                        // endecharts
+                        // vue-video-player
                         vueVideoPlayer: {
                           test: /[\\/]node_modules[\\/]vue-video-player[\\/]src[\\/]/,
                           name: 'chunk-video-player',
@@ -86,7 +91,18 @@ module.exports = {
                           priority: 3,
                           reuseExistingChunk: true,
                           enforce: true
+                        },
+                        // endvue-video-player
+                        // xlsx
+                        xlsx: {
+                            test: /[\\/]node_modules[\\/]xlsx[\\/]/,
+                            name: 'chunk-xlsx',
+                            chunks: 'all',
+                            priority: 3,
+                            reuseExistingChunk: true,
+                            enforce: true
                         }
+                        // endxlsx
                     }
                 }
             }

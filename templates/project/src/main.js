@@ -1,28 +1,41 @@
 import Vue from 'vue';
 
-// 视频播放
+// vue-video-player
 import VideoPlayer from 'vue-video-player/src';
 import 'vue-video-player/src/custom-theme.css';
 import 'video.js/dist/video-js.css';
+Vue.use(VideoPlayer);
+// endvue-video-player
 
-// 兼容低版本
+// babel-polyfill
 import 'babel-polyfill';
+// endbabel-polyfill
 
 // echarts
 import * as echarts from 'echarts';
+Vue.prototype.$echarts = echarts;
+// endecharts
 
-// 时间插件
+// moment-timezone
 import moment from 'moment-timezone';
+Vue.prototype.$moment = moment;
+// endmoment-timezone
 
 // element-ui
 import ElementUI from 'element-ui';
 const Message = ElementUI.messages;
 import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 
-// 国际化
+// vue-i18n
 import VueI18n from 'vue-i18n';
 import I18n from '@/service/i18n';
 import i18nText from './i18n';
+Vue.use(VueI18n);
+I18n.i18n = new VueI18n({
+  locale: 'zh',
+  messages: i18nText
+});
+// endvue-i18n
 
 import App from './App.vue';
 import filters from './filters';
@@ -36,23 +49,11 @@ import '@/router/interceptor.router';
 import api from "./request/api";
 import request from "./request/request";
 
-Vue.use(VueI18n);
-Vue.use(VideoPlayer);
 
 Vue.config.productionTip = false;
-I18n.i18n = new VueI18n({
-  locale: 'zh',
-  messages: i18nText
-});
-
 Vue.prototype.$api = api;
 Vue.prototype.$request = request;
-
-Vue.prototype.$moment = moment;
 Vue.prototype.$message = Message;
-
-// echart
-Vue.prototype.$echarts = echarts;
 
 // 加入所有的filter
 Object.keys(filters).forEach((key) => {
@@ -61,11 +62,15 @@ Object.keys(filters).forEach((key) => {
 
 Vue.use(ElementUI, {
   size: 'small',
+  // vue-i18n
   i18n: (key, value) => I18n.i18n.t(key, value)
+  // endvue-i18n
 });
 
 new Vue({
     router,
+    // vue-i18n
     i18n: I18n.i18n,
+    // endvue-i18n
     render: h => h(App)
 }).$mount('#app');

@@ -5,7 +5,7 @@
             <i v-if="!collapse" class="el-icon-s-fold"></i>
             <i v-else class="el-icon-s-unfold"></i>
         </div>
-        <div class="logo">公共项目模板</div>
+        <div class="logo"><!-- title --></div>
         <div class="top-nav">
           <el-menu
             v-if="hasMenu"
