@@ -21,33 +21,33 @@ program
   .action((name, options) => {
     inquirer.prompt(createInquirer).then((answers) => {
       makeDir(name, options, answers).then(() => {
-        const ls = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['install'], {
-          cwd: `${path.join(path.resolve(), name)}`,
-          env: process.env
-        });
-        ls.stdout.on('data', (data) => {
-          console.log(`stdout: ${data}`);
-        });
-        ls.stderr.on('data', (data) => {
-          console.log(`stderr: ${data}`);
-        });
-        ls.on('close', (code) => {
-          console.log(chalk.green(`child process exited with code ${code}`));
+        // const ls = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['install'], {
+        //   cwd: `${path.join(path.resolve(), name)}`,
+        //   env: process.env
+        // });
+        // ls.stdout.on('data', (data) => {
+        //   console.log(`stdout: ${data}`);
+        // });
+        // ls.stderr.on('data', (data) => {
+        //   console.log(`stderr: ${data}`);
+        // });
+        // ls.on('close', (code) => {
+        //   console.log(chalk.green(`child process exited with code ${code}`));
           
-          const lsx = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['run', 'start'], {
-            cwd: `${path.join(path.resolve(), name)}`,
-            env: process.env
-          });
-          lsx.stdout.on('data', (data) => {
-            console.log(`stdout: ${data}`);
-          });
-          lsx.stderr.on('data', (data) => {
-            console.log(`stderr: ${data}`);
-          });
-          lsx.on('close', (code) => {
-            console.log(chalk.green(`child process exited with code ${code}`));
-          })
-        });
+        //   const lsx = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['run', 'start'], {
+        //     cwd: `${path.join(path.resolve(), name)}`,
+        //     env: process.env
+        //   });
+        //   lsx.stdout.on('data', (data) => {
+        //     console.log(`stdout: ${data}`);
+        //   });
+        //   lsx.stderr.on('data', (data) => {
+        //     console.log(`stderr: ${data}`);
+        //   });
+        //   lsx.on('close', (code) => {
+        //     console.log(chalk.green(`child process exited with code ${code}`));
+        //   })
+        // });
       });
     })
   })
