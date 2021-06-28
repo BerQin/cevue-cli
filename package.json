@@ -1,7 +1,8 @@
 {
-  "name": "@cevue/cli",
+  "name": "cevuel-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create element-ui project with vue<br/>\r Help you build a new project faster with configuration and title",
+  "private": false,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,11 +18,23 @@
     "lib"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.1",
     "commander": "^7.2.0",
     "inquirer": "^8.1.1",
     "ora": "^5.4.1"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BerQin/cevue-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BerQin/cevue-cli/issues"
+  },
+  "homepage": "https://github.com/BerQin/cevue-cli#readme"
 }

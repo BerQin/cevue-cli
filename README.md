@@ -12,7 +12,7 @@ Help you build a new project faster with configuration and title
 
 ## Install
 ```bash
-npm install @cevue/cli -g
+npm install cevuel-cli -g
 ```
 
 ## Usage
