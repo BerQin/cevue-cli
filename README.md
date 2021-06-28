@@ -15,7 +15,7 @@ Help you build a new project faster with configuration and title
 npm install @cevue/cli -g
 ```
 
-## Use
+## Usage
 ```bash
 cevue creat <projectName>
 ...
