@@ -11,7 +11,7 @@ const {createInquirer} = require('../lib/inquirer-list');
 const { makeDir } = require('../lib/create-dir');
 
 program
-  .version(`@cevue/cli ${pJson.version}`, '-v, --version')
+  .version(`cevuel-cli ${pJson.version}`, '-v, --version')
   .usage('<command> [options]')
 
 program

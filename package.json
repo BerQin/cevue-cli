@@ -1,6 +1,6 @@
 {
   "name": "cevuel-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create element-ui project with vue<br/>\r Help you build a new project faster with configuration and title",
   "private": false,
   "main": "index.js",
