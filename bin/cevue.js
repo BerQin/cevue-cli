@@ -4,7 +4,7 @@ const program = require('commander');
 const inquirer = require('inquirer');
 const chalk = require('chalk');
 const path = require("path");
-const { exec, spawn } = require('child_process');
+// const { exec, spawn } = require('child_process');
 
 const pJson = require('../package.json');
 const {createInquirer} = require('../lib/inquirer-list');
