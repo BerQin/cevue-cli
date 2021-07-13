@@ -68,6 +68,7 @@ export default {
         return {
             collapse: false,
             fullscreen: false,
+            selectRoute: null,
             name: 'linxin',
             message: 2
         };
@@ -83,11 +84,17 @@ export default {
         }
     },
     methods: {
+      upMenu(path) {
+        const index = '/' + this.$route.path.split('/')[1];
+        if (index !== this.selectRoute) {
+          this.handleSelect(this.onRoutes, null, null, true)
+        }
+      },
       handleSelect(e, list, vItem, nopush) {
         const parent = this.menulist.filter((item) => {
           return item.index == e;
         });
-        if (parent[0].subs && parent[0].subs.length) {
+        if (parent[0] && parent[0].subs && parent[0].subs.length) {
           const children = parent[0].subs;
           ChangeMenu.$emit('ChangeLeftMenu', children);
           ChangeMenu.$emit('HidenLeftMenu', false);
@@ -138,6 +145,12 @@ export default {
           }
           this.fullscreen = !this.fullscreen;
       }
+    },
+    created() {
+      ChangeMenu.$on('routerChangeMenu', this.upMenu);
+    },
+    destroyed() {
+      ChangeMenu.$off('routerChangeMenu', this.upMenu);
     },
     mounted() {
         if (this.hasMenu) {

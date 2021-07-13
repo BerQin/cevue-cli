@@ -1,5 +1,6 @@
 import LogInOutFn from '@/function/LogInOut';
 import userData from '@/store/user';
+import ChangeMenu from '@/event/changeMenu';
 import router from './index';
 
 //使用钩子函数对路由进行权限跳转
@@ -9,6 +10,7 @@ router.beforeEach((to, from, next) => {
     // console.log(to);
     if (userData.userInfo.name) {
       next();
+      ChangeMenu.$emit('routerChangeMenu', to);
     } else {
       if (to.path !== '/login') {
         next('/login');
