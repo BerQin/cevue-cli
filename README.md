@@ -43,4 +43,4 @@ cevue -h
 
 ## License
 
-[MIT](https://github.com/vuejs/vue-cli/blob/dev/LICENSE)
+[MIT](https://github.com/BerQin/cevue-cli/blob/master/LICENSE)
