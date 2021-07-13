@@ -10,7 +10,7 @@ Help you build a new project faster with configuration and title<br/>
 > You can see the documentation in the root directory `<projectName> README.md` of the project address.
 
 ## Next version budget
-√ Automatic installation (2021-07-13)
+√ Automatic installation (2021-07-13) (v1.1.0)
 - Create an event type template with cevuel-cli
 - Create an directive type template with cevuel-cli
 - Create components template with cevuel-cli
