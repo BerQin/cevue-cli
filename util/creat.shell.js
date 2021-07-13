@@ -9,7 +9,7 @@ const pJson = require('../package.json');
 module.exports = async function(name, options, answers) {
   const UserPath = path.join(path.resolve(), name);
   const npmc = npmCmd();
-  // runInstall(npmc, ['i'], UserPath);
+  runInstall(npmc, ['i'], UserPath);
   let logStr = log.getLogo();
   logStr += `
     \n
