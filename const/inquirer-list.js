@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const { packageList } =  require('./const/data-list');
+const { packageList } =  require('./data-list');
 
 module.exports = {
     createInquirer: [
