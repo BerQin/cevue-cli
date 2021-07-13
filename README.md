@@ -11,9 +11,9 @@ Help you build a new project faster with configuration and title<br/>
 
 ## Next version budget
 √ Automatic installation (2021-07-13)
-- Create an event type template cevuel-cli
-- Create an directive type template cevuel-cli
-- Create components template cevuel-cli
+- Create an event type template with cevuel-cli
+- Create an directive type template with cevuel-cli
+- Create components template with cevuel-cli
 - Update the latest template project with cevuel-cli
 - Add Less in project
 - Add TS in project
