@@ -10,7 +10,9 @@ router.beforeEach((to, from, next) => {
     // console.log(to);
     if (userData.userInfo.name) {
       next();
-      ChangeMenu.$emit('routerChangeMenu', to);
+      setTimeout(() => {
+        ChangeMenu.$emit('routerChangeMenu', to);
+      }, 30)
     } else {
       if (to.path !== '/login') {
         next('/login');

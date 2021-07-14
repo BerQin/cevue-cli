@@ -62,27 +62,26 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.wrapper {
-    .main-conetnt{
-        display: flex;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    .flex-content-box {
-        flex: 1;
-        position: relative;
-    }
-    .sider-box.content-collapse {
-        width: 65px;
-    }
-    .sider-box {
-        position: relative;
-        width: 250px;
-        -webkit-transition: width .3s ease-in-out;
-        transition: width .3s ease-in-out;
-    }
+.sider-box {
+  position: relative;
+  width: 250px;
+  -webkit-transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+}
+.sider-box.content-collapse {
+  width: 65px;
+}
+
+.flex-content-box {
+  flex: 1;
+  position: relative;
+}
+.main-conetnt{
+  display: flex;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 </style>

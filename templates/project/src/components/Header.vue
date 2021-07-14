@@ -91,6 +91,7 @@ export default {
         }
       },
       handleSelect(e, list, vItem, nopush) {
+        this.selectRoute = e;
         const parent = this.menulist.filter((item) => {
           return item.index == e;
         });

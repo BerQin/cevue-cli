@@ -9,7 +9,7 @@ module.exports = {
             name: "title",
             filter: function (val) {
                 if (!val) {
-                    return 'Vue-elementUI-project';
+                    return 'ProjectTemplate';
                 }
                 return val;
             }
