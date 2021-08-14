@@ -7,21 +7,15 @@
 `menu`规则是根据当前的数据结构，第一数组放在头部做一级菜单，`subs`下的放在左侧做次级菜单最多支持4级菜单，如果不存在头部菜单，支持3级菜单，菜单的路由是`index`属性，头部菜单的数据设置是一层数组每一项`index`放`router`的第一个路由字段，二级以及之后的菜单放全路径，菜单组的组菜单请自行安排id，icon可设置`element`的`classname`，只存在侧边栏菜单的请按照侧边菜单规则设置，如果需要修改请自行修改<br/>
 切换头部菜单显示请设置`components/Home.vue`的`headerHasMenu`属性 `true`是有头部菜单 `false`是无头部菜单，会把菜单转到左侧
 
-## 使用vue框架
+### 关于脚手架与库的使用  
 
-选用VUE框架，原因在于易学，组件交互迅速，工作效率高！
+CeVueCli 自定义cli脚手架(欢迎使用和提出建议与维护)<https://github.com/BerQin/cevue-cli>  
 
-### 关于脚手架与库的使用
+Vue快速上手链接<https://cn.vuejs.org/v2/guide/>  
 
-Vue快速上手链接<https://cn.vuejs.org/v2/guide/>
-<br/>
-Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>
-<br/>
-时间格式插件Moment.js<https://momentjs.bootcss.com/>
-<br/>
-视频播放插件vue-video-player<https://github.com/topics/vue-video-player>
-<br/>
-远程桌面连接@novnc/novnc<https://www.npmjs.com/package/@novnc/novnc>&nbsp;&nbsp;github<https://github.com/novnc/noVNC/blob/master/docs/API.md>&nbsp;&nbsp;简易的使用介绍<https://blog.csdn.net/weixin_39457424/article/details/113311937>&nbsp;&nbsp;参数API介绍<https://github.com/novnc/noVNC/blob/master/docs/API.md?spm=a2cl9.codeup_devops2020_goldlog_projectFiles.0.0.4e3d3f1afai5Ux&file=API.md>
+Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>  
+
+时间格式插件Moment.js<https://momentjs.bootcss.com/>  
 
 ### 项目结构
 
@@ -68,7 +62,7 @@ Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>
 <br/><br/>
 其他可以按照目录名称对应功能，结构简单易懂！
 
-# Vue 脚手架使用
+# 项目的使用
 ## Getting Started
 
 Install dependencies,
