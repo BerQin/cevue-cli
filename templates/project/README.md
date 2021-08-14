@@ -11,11 +11,15 @@
 
 CeVueCli 自定义cli脚手架(欢迎使用和提出建议与维护)<https://github.com/BerQin/cevue-cli>  
 
-Vue快速上手链接<https://cn.vuejs.org/v2/guide/>  
-
-Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>  
-
-时间格式插件Moment.js<https://momentjs.bootcss.com/>  
+Vue快速上手链接<https://cn.vuejs.org/v2/guide/>
+<br/>
+Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>
+<br/>
+时间格式插件Moment.js<https://momentjs.bootcss.com/>
+<br/>
+视频播放插件vue-video-player<https://github.com/topics/vue-video-player>
+<br/>
+远程桌面连接@novnc/novnc<https://www.npmjs.com/package/@novnc/novnc>&nbsp;&nbsp;github<https://github.com/novnc/noVNC/blob/master/docs/API.md>&nbsp;&nbsp;简易的使用介绍<https://blog.csdn.net/weixin_39457424/article/details/113311937>&nbsp;&nbsp;参数API介绍<https://github.com/novnc/noVNC/blob/master/docs/API.md?spm=a2cl9.codeup_devops2020_goldlog_projectFiles.0.0.4e3d3f1afai5Ux&file=API.md>
 
 ### 项目结构
 
