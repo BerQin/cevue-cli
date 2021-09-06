@@ -37,24 +37,22 @@ Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>
   >> `store` 全局变量
 
 # 项目的使用
-## 快速开始
+## Getting Started
 
-安装
+Install dependencies,
+
 ```bash
 $ npm i
 ```
 
-🖖 启动服务
+Start the dev server,
+
 ```bash
 $ npm run start
 ```
 
-正式环境构建
+Build the project
+
 ```bash
 $ npm run build
-```
-
-测试环境构建调试
-```bash
-$ npm run build:dev
 ```

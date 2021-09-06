@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-		"start": "cross-env NODE_ENV=development vue-cli-service serve --open",
-		"build": "cross-env NODE_ENV=production vue-cli-service build",
-		"build:dev": "cross-env NODE_ENV=development NODE_BUILD_ENV=development vue-cli-service build"
+    "start": "cross-env NODE_ENV=development vue-cli-service serve --open",
+    "build": "cross-env NODE_ENV=production vue-cli-service build",
+    "build:dev": "cross-env NODE_ENV=development NODE_BUILD_ENV=development vue-cli-service build",
+    "format": "prettier \"**/*.js\" \"**/*.html\" \"**/*.scss\" \"**/*.css\" \"**/*.less\" \"**/*.vue\" --w --config-precedence file-override"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -28,6 +29,7 @@
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-service": "^3.12.1",
     "cross-env": "^7.0.3",
+    "prettier": "^2.3.2",
     "sass": "^1.35.1",
     "sass-loader": "^9.0.0",
     "vue-template-compiler": "^2.6.10",
