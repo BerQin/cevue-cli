@@ -21,20 +21,20 @@ Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>
 
 > `public` 不经过编译的资源
 > `src` 项目目录
-  >> `assets` 静态文件
-  >> `components` 中包含所有用到的组件(自行细分) 
-  >> `core` 公共类和业务处理方法
-    >>> `business` 业务类
-    >>> `common` 公共非业务类
-  >> `directive` 指令目录
-  >> `event` 事件创建目录（用于全局的自定义事件传递）
-  >> `filters` 页面通道Filter格式化
-  >> `i18n` 国际化目录
-  >> `pages` 所有的页面模版
-  >> `request` 请求公共方法,可做请求拦截,在其他组件中使用 `this.$request(url,params,type).then(() => {}).catch(() => {})`
-  >> `router` 路由设置目录
-  >> `service` 服务模块
-  >> `store` 全局变量
+  >> `assets` 静态文件  
+  >> `components` 中包含所有用到的组件(自行细分)  
+  >> `core` 公共类和业务处理方法  
+    >>> `business` 业务类  
+    >>> `common` 公共非业务类  
+  >> `directive` 指令目录  
+  >> `event` 事件创建目录（用于全局的自定义事件传递）  
+  >> `filters` 页面通道Filter格式化  
+  >> `i18n` 国际化目录  
+  >> `pages` 所有的页面模版  
+  >> `request` 请求公共方法,可做请求拦截,在其他组件中使用 `this.$request(url,params,type).then(() => {}).catch(() => {})`  
+  >> `router` 路由设置目录  
+  >> `service` 服务模块  
+  >> `store` 全局变量  
 
 # 项目的使用
 ## 快速开始
