@@ -31,7 +31,7 @@ Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>
   >> `filters` 页面通道Filter格式化  
   >> `i18n` 国际化目录  
   >> `pages` 所有的页面模版  
-  >> `request` 请求公共方法,可做请求拦截,在其他组件中使用 `this.$request(url,params,type).then(() => {}).catch(() => {})`  
+  >> `request` 请求公共方法,可做请求拦截,在其他组件中使用 `this.$api.xxx(params).then(() => {}).catch(() => {})`  
   >> `router` 路由设置目录  
   >> `service` 服务模块  
   >> `store` 全局变量  
