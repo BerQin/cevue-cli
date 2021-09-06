@@ -1,15 +1,8 @@
 import axios from "axios";
-import router from "../router";
-// import store from '../store';
-// console.log(store);
-
-let BASEURL = "";
-if (process.env.NODE_ENV === "dev") {
-  BASEURL = "/api/v1"; // 开发环境
-} else if (process.env.NODE_ENV === "production") {
-  BASEURL = "http://116.236.59.98:8019/api/v1"; // 生产环境
-}
 import { Message } from "element-ui";
+
+import ReqConst from './Const';
+import { UserLogClass } from '@/core/business';
 
 axios.defaults.withCredentials = true; //配置允许跨域携带cookie
 const HttpError = {
@@ -56,24 +49,28 @@ axios.interceptors.response.use(
 );
 
 
+
 /**
+ * 
  * @func axios的二次封装
- * @param method-请求方法，url-接口地址，data-请求参数 config配置参数 rouleData路由拼接参数，noCatch不适用默认的catch拦截提示
+ * @param {String} url String
+ * @param {Object} params Object
+ * @param {String} method 'GET' | 'POST' | 'PUT' | 'DELETE'
+ * @param {Object} options {noCatch: Boolean // 是否使用通用报错}
+ * @returns Promise
  */
 const request = (url, data = {}, method = "GET", config = {
-  rouleData: '',
   noCatch: false
 }) => {
-  let params;
-  if (["GET", "PUT"].indexOf(method.toUpperCase()) !== -1) {
-    params = "params";
-  } else {
-    params = "data";
+  let params = 'data';
+  const methodType = method.toUpperCase();
+  if (ReqConst.ParamsTypeList.indexOf(methodType) !== -1) {
+    params = 'params';
   }
   return new Promise((resolve, reject) => {
     axios({
-      url: BASEURL + url + config.rouleData,
-      method: method,
+      url: process.env.VUE_APP_BASE_URL + url,
+      method: methodType,
       [params]: data
     })
       .then(res => {
@@ -82,14 +79,11 @@ const request = (url, data = {}, method = "GET", config = {
       .catch(e => {
         reject(e);
         if (config.noCatch) return false; 
-        if(e.response.data.code != 200){
-          if(e.response.data.code == 401 ){
-            router.replace({
-              path: '/login',
-              query: { redirect: router.currentRoute.fullPath }
-            }); 
+        if(e.response.status != 200){
+          if(e.response.status == 401 ){
+            UserLogClass.LogOut();
           }else{
-            Message({type: "error", message:e.response.data.message || HttpError[e.response.data.code] }); 
+            Message({type: "error", message:e.response.data.message || HttpError[e.response.status] }); 
           }
         }
       });

@@ -3,8 +3,8 @@
       <div class="error-code">4<span>0</span>4</div>
       <div class="error-desc">啊哦~ 你所访问的页面不存在</div>
       <div class="error-handle">
-          <router-link :to="userData.name ? '/' : '/login'">
-            <el-button type="primary" size="large">{{userData.name ? '返回首页' : '去登陆'}}</el-button>
+          <router-link :to="userData.username ? '/' : '/login'">
+            <el-button type="primary" size="large">{{userData.username ? '返回首页' : '去登陆'}}</el-button>
           </router-link>
           <el-button class="error-btn" type="primary" size="large" @click="goBack">返回上一页</el-button>
       </div>
@@ -12,13 +12,15 @@
 </template>
 
 <script>
-import userData from '../store/user';
 
 export default {
   data() {
     return {
-      userData: userData.userInfo
+      userData: {}
     }
+  },
+  created() {
+    this.userData = this.$services.UserService.getUserInfo();
   },
   mounted() {
   },

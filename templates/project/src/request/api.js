@@ -1,4 +1,5 @@
-const api = {
-    login: '/user/login', //用户登录post
+import User from './user/Req';
+
+export default {
+  User
 };
-export default api;

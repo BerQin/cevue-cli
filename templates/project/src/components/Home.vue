@@ -22,8 +22,8 @@
 <script>
 import vHead from './Header.vue';
 import vSidebar from './Sidebar.vue';
-import ChangeMenu from '@/event/changeMenu';
-import menuLitst from '@/store/menu';
+import { Menu } from '@/event';
+import { MenuList } from '@/store';
 
 export default {
     name: 'Teacher',
@@ -32,7 +32,7 @@ export default {
             collapse: false,
             hidenMenu: false,
             headerHasMenu: true,
-            menulist: menuLitst,
+            menulist: MenuList,
             siderMenu: []
         };
     },
@@ -41,18 +41,18 @@ export default {
         vSidebar
     },
     created() {
-        ChangeMenu.$on('collapse-content', msg => {
+        Menu.$on('collapse-content', msg => {
             this.collapse = msg;
         });
-        ChangeMenu.$on('HidenLeftMenu', msg => {
+        Menu.$on('HidenLeftMenu', msg => {
             // console.log(msg);
             this.hidenMenu = msg;
         });
-        ChangeMenu.$on('ChangeLeftMenu', msg => {
+        Menu.$on('ChangeLeftMenu', msg => {
             // console.log(msg);
             this.siderMenu = msg;
             setTimeout(() => {
-                ChangeMenu.$emit('collapse', this.collapse);
+                Menu.$emit('collapse', this.collapse);
             })
         });
         if (!this.headerHasMenu) {

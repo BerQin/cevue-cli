@@ -23,7 +23,7 @@
                     </div>
                     <div class="user-info-list">
                         上次登录时间：
-                        <span>2019-11-01</span>
+                        <span>{{1630892273491 | FDate}}</span>
                     </div>
                     <div class="user-info-list">
                         上次登录地点：

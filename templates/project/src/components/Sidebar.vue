@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import changeMenu from '../event/changeMenu';
+import { Menu } from '@/event';
 
 export default {
     props: ['menulist', 'isHaderHasMenu'],
@@ -63,10 +63,10 @@ export default {
         }
     },
     created() {
-        // 通过 Event changeMenu 进行组件间通信，来折叠侧边栏
-        changeMenu.$on('collapse', msg => {
+        // 通过 Event Menu 进行组件间通信，来折叠侧边栏
+        Menu.$on('collapse', msg => {
             this.collapse = msg;
-            changeMenu.$emit('collapse-content', msg);
+            Menu.$emit('collapse-content', msg);
         });
     }
 };

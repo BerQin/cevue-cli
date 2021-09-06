@@ -60,7 +60,8 @@
     </div>
 </template>
 <script>
-import ChangeMenu from '@/event/changeMenu';
+import { Menu } from '@/event';
+import { UserLogClass } from '@/core/business';
 
 export default {
     props: ['hasMenu', 'menulist'],
@@ -69,13 +70,13 @@ export default {
             collapse: false,
             fullscreen: false,
             selectRoute: null,
-            name: 'linxin',
+            name: '未命名',
             message: 2
         };
     },
     computed: {
         username() {
-          let username = localStorage.getItem('ms_username');
+          const { username } = this.$services.UserService.getUserInfo();
           return username ? username : this.name;
         },
         onRoutes() {
@@ -97,11 +98,11 @@ export default {
         });
         if (parent[0] && parent[0].subs && parent[0].subs.length) {
           const children = parent[0].subs;
-          ChangeMenu.$emit('ChangeLeftMenu', children);
-          ChangeMenu.$emit('HidenLeftMenu', false);
+          Menu.$emit('ChangeLeftMenu', children);
+          Menu.$emit('HidenLeftMenu', false);
         } else {
-          ChangeMenu.$emit('ChangeLeftMenu', []);
-          ChangeMenu.$emit('HidenLeftMenu', true);
+          Menu.$emit('ChangeLeftMenu', []);
+          Menu.$emit('HidenLeftMenu', true);
         }
         if (!nopush) {
           if (e !== this.onRoutes) this.$router.push(e);
@@ -110,14 +111,13 @@ export default {
       // 用户名下拉菜单选择事件
       handleCommand(command) {
           if (command == 'loginout') {
-              localStorage.removeItem('ms_username');
-              this.$router.push('/login');
+            UserLogClass.LogOut();
           }
       },
       // 侧边栏折叠
       collapseChage() {
           this.collapse = !this.collapse;
-          ChangeMenu.$emit('collapse', this.collapse);
+          Menu.$emit('collapse', this.collapse);
       },
       // 全屏事件
       handleFullScreen() {
@@ -148,10 +148,10 @@ export default {
       }
     },
     created() {
-      ChangeMenu.$on('routerChangeMenu', this.upMenu);
+      Menu.$on('routerChangeMenu', this.upMenu);
     },
     destroyed() {
-      ChangeMenu.$off('routerChangeMenu', this.upMenu);
+      Menu.$off('routerChangeMenu', this.upMenu);
     },
     mounted() {
         if (this.hasMenu) {

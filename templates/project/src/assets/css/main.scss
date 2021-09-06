@@ -179,6 +179,9 @@ a {
 .c-yellow {
   color: #FFC100;
 }
+.c-red {
+  color: #E8684A;
+}
 .b-grey{
   background: #F9F9F9;
 }
@@ -187,6 +190,12 @@ a {
 }
 .b-yellow {
   background: #FFC100;
+}
+.b-bgrey {
+  background: #505763;
+}
+.b-red {
+  background: #F74C4C;
 }
 .center-box{
   max-width: 1186px;
@@ -216,4 +225,34 @@ a {
 }
 .hi-5000 {
   height: 5000px;
+}
+.ab-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.ov-au {
+  overflow: auto;
+}
+.margin-left-10 {
+  margin-left: 10px;
+}
+.over-scroll {
+  overflow: auto;
+}
+.width-120 {
+  width: 120px;
+}
+.width-360 {
+  width: 360px;
+}
+.no-touch {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

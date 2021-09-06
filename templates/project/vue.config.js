@@ -9,21 +9,19 @@ module.exports = {
     assetsDir: 'static',
     productionSourceMap: false,
     devServer: {
-        // port
-        port: 8090
-        // endport
+        port: 8900,
         // proxy: {
-        //     '/api':{
-        //         target:'http://116.236.59.98:9528',
-        //         changeOrigin:true,
-        //         pathRewrite:{
-        //             '^/api':'/api'
-        //         }
-        //     }
+        //   '/api':{
+        //       target:'/',
+        //       changeOrigin:true,
+        //       pathRewrite:{
+        //           '^/api':'/api'
+        //       }
+        //   }
         // }
     },
     chainWebpack: config => {
-        if (process.env.NODE_ENV == 'production') {
+      if (process.env.NODE_ENV == 'production' || process.env.NODE_BUILD_ENV == 'development') {
             // 移除 prefetch 插件
             config.plugins.delete('prefetch');
         }
@@ -36,9 +34,13 @@ module.exports = {
     },
     configureWebpack: (config) => {
         const res = {};
-        if (process.env.NODE_ENV == 'production') {
+        
+        if (process.env.NODE_BUILD_ENV == 'development') {
             res.plugins = res.plugins || [];
-            res.plugins.push(new BundleAnalyzerPlugin()),
+            res.plugins.push(new BundleAnalyzerPlugin());
+        }
+
+        if (process.env.NODE_ENV == 'production' || process.env.NODE_BUILD_ENV == 'development') {
             res.optimization = {
                 splitChunks: {
                     // chunks: 'async',
@@ -83,27 +85,7 @@ module.exports = {
                             enforce: true
                         },
                         // endecharts
-                        // vue-video-player
-                        vueVideoPlayer: {
-                          test: /[\\/]node_modules[\\/]vue-video-player[\\/]src[\\/]/,
-                          name: 'chunk-video-player',
-                          chunks: 'all',
-                          priority: 3,
-                          reuseExistingChunk: true,
-                          enforce: true
-                        },
-                        // endvue-video-player
-                        // xlsx
-                        xlsx: {
-                            test: /[\\/]node_modules[\\/]xlsx[\\/]/,
-                            name: 'chunk-xlsx',
-                            chunks: 'all',
-                            priority: 3,
-                            reuseExistingChunk: true,
-                            enforce: true
                         }
-                        // endxlsx
-                    }
                 }
             }
         }
