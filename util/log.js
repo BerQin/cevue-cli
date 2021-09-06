@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
 module.exports = {
-  printChar (printStr, col, char) {
+  printChar(printStr, col, char) {
     char = char ? char : '*';
-    for (var i=0; i<col; i++) {
+    for (var i = 0; i < col; i++) {
       printStr += char;
     }
     return printStr;
   },
-  n (printStr) {
+  n(printStr) {
     printStr += '\n';
     return printStr;
   },
@@ -24,11 +24,11 @@ module.exports = {
       | :\/: | :\/: | ()() | :\/: | :\/: | (__) | :\/: | :\/: | (__) | :\/: |
       | '--'C| '--'E| '--'V| '--'U| '--'E| '--'L| '--'-| '--'C| '--'L| '--'I|
       \`------\`------\`------\`------\`------\`------\`------\`------\`------\`------\'
-    `
+    `;
     printStr = this.n(printStr);
     printStr = this.n(printStr);
     printStr = this.printChar(printStr, 86, null);
 
     return printStr;
-  }
+  },
 };

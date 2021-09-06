@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   FsisAccess(filePath) {
@@ -9,7 +9,7 @@ module.exports = {
       fs.statSync(filePath);
       return true;
     } catch (e) {
-      return false
+      return false;
     }
   },
   creatDir(filesPath) {
@@ -23,4 +23,4 @@ module.exports = {
     }
     return false;
   },
-}
+};

@@ -4,13 +4,13 @@ const program = require('commander');
 const inquirer = require('inquirer');
 
 const pJson = require('../package.json');
-const {createInquirer} = require('../const/inquirer-list');
+const { createInquirer } = require('../const/inquirer-list');
 const { makeDir } = require('../lib/create-dir');
-const runCreatShell = require('../util/creat.shell')
+const runCreatShell = require('../util/creat.shell');
 
 program
   .version(`cevuel-cli ${pJson.version}`, '-v, --version')
-  .usage('<command> [options]')
+  .usage('<command> [options]');
 
 program
   .command('create <app-name>')
@@ -20,8 +20,7 @@ program
     inquirer.prompt(createInquirer).then(async (answers) => {
       await makeDir(name, options, answers);
       await runCreatShell(name, options, answers);
-    })
-  })
-
+    });
+  });
 
 program.parse(process.argv);
