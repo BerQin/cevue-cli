@@ -21,4 +21,4 @@ router.beforeResolve((to, from, next) => {
   if (to.path !== '/login') {
     Menu.$emit('routerChangeMenu', to);
   }
-})
+});

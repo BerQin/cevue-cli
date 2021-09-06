@@ -6,9 +6,9 @@ const resData = {
     return new Promise((resolve) => {
       ReqFn.Request(api.login, params, 'GET').then((data) => {
         resolve(data);
-      })
+      });
     });
-  }
-}
+  },
+};
 
 export default resData;

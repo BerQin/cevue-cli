@@ -1,4 +1,4 @@
-import { CookieClass } from "@/core/common";
+import { CookieClass } from '@/core/common';
 
 function UserService() {
   this.username = CookieClass.getCookie('username');
@@ -8,9 +8,9 @@ function UserService() {
 UserService.prototype.getUserInfo = function () {
   return {
     username: CookieClass.getCookie('username'),
-    token: CookieClass.getCookie('token')
-  }
-}
+    token: CookieClass.getCookie('token'),
+  };
+};
 
 UserService.prototype.setUserInfo = function (json) {
   Object.keys(json).forEach((key) => {
@@ -23,12 +23,12 @@ UserService.prototype.setUserInfo = function (json) {
       CookieClass.setCookie(SetData);
     }
   });
-}
+};
 
 UserService.prototype.clear = function () {
   this.name = null;
   this.token = null;
   CookieClass.deleteCookie(['username', 'token']);
-}
+};
 
 export default UserService;

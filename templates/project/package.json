@@ -6,7 +6,7 @@
     "start": "cross-env NODE_ENV=development vue-cli-service serve --open",
     "build": "cross-env NODE_ENV=production vue-cli-service build",
     "build:dev": "cross-env NODE_ENV=development NODE_BUILD_ENV=development vue-cli-service build",
-    "format": "prettier \"**/*.js\" \"**/*.html\" \"**/*.scss\" \"**/*.css\" \"**/*.less\" \"**/*.vue\" --w --config-precedence file-override"
+    "format": "prettier \"**/*.js\" \"**/*.html\" \"**/*.scss\" \"**/*.css\" \"**/*.vue\" --w --config-precedence file-override"
   },
   "dependencies": {
     "axios": "^0.18.0",

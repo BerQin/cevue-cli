@@ -1,5 +1,3 @@
 import UserLogClass from './UserLog.Class';
 
-export {
-  UserLogClass
-}
+export { UserLogClass };

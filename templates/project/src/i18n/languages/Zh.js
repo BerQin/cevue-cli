@@ -1,4 +1,4 @@
-import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
+import zhLocale from 'element-ui/lib/locale/lang/zh-CN';
 
 export default {
   i18n: {
@@ -11,7 +11,7 @@ export default {
     p3: '只要能把自己的事做好，并让自己快乐，你就领先于大多数人了。',
     title2: '组件插值',
     info: 'Element组件需要国际化，请参考 {action}。',
-    value: '文档'
+    value: '文档',
   },
-  ...zhLocale
-}
+  ...zhLocale,
+};

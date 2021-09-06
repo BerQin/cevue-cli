@@ -1,22 +1,29 @@
 <template>
-    <div class="wrapper">
-        <v-head :hasMenu="headerHasMenu" :menulist="menulist"></v-head>
-        <div class="main-conetnt">
-            <div v-if="!hidenMenu" class="sider-box" :class="{'content-collapse':collapse}">
-                <v-sidebar :isHaderHasMenu="headerHasMenu" :menulist="siderMenu"></v-sidebar>
-            </div>
-            <div class="flex-content-box">
-                <div class="content-box" :class="{'content-collapse':collapse}">
-                    <div class="content">
-                        <transition name="move" mode="out-in">
-                            <router-view></router-view>
-                        </transition>
-                        <el-backtop target=".content"></el-backtop>
-                    </div>
-                </div>
-            </div>
+  <div class="wrapper">
+    <v-head :hasMenu="headerHasMenu" :menulist="menulist"></v-head>
+    <div class="main-conetnt">
+      <div
+        v-if="!hidenMenu"
+        class="sider-box"
+        :class="{ 'content-collapse': collapse }"
+      >
+        <v-sidebar
+          :isHaderHasMenu="headerHasMenu"
+          :menulist="siderMenu"
+        ></v-sidebar>
+      </div>
+      <div class="flex-content-box">
+        <div class="content-box" :class="{ 'content-collapse': collapse }">
+          <div class="content">
+            <transition name="move" mode="out-in">
+              <router-view></router-view>
+            </transition>
+            <el-backtop target=".content"></el-backtop>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -26,47 +33,47 @@ import { Menu } from '@/event';
 import { MenuList } from '@/store';
 
 export default {
-    name: 'Teacher',
-    data() {
-        return {
-            collapse: false,
-            hidenMenu: false,
-            headerHasMenu: true,
-            menulist: MenuList,
-            siderMenu: []
-        };
-    },
-    components: {
-        vHead,
-        vSidebar
-    },
-    created() {
-        Menu.$on('collapse-content', msg => {
-            this.collapse = msg;
-        });
-        Menu.$on('HidenLeftMenu', msg => {
-            // console.log(msg);
-            this.hidenMenu = msg;
-        });
-        Menu.$on('ChangeLeftMenu', msg => {
-            // console.log(msg);
-            this.siderMenu = msg;
-            setTimeout(() => {
-                Menu.$emit('collapse', this.collapse);
-            })
-        });
-        if (!this.headerHasMenu) {
-            this.siderMenu = menuLitst;
-        }
+  name: 'Teacher',
+  data() {
+    return {
+      collapse: false,
+      hidenMenu: false,
+      headerHasMenu: true,
+      menulist: MenuList,
+      siderMenu: [],
+    };
+  },
+  components: {
+    vHead,
+    vSidebar,
+  },
+  created() {
+    Menu.$on('collapse-content', (msg) => {
+      this.collapse = msg;
+    });
+    Menu.$on('HidenLeftMenu', (msg) => {
+      // console.log(msg);
+      this.hidenMenu = msg;
+    });
+    Menu.$on('ChangeLeftMenu', (msg) => {
+      // console.log(msg);
+      this.siderMenu = msg;
+      setTimeout(() => {
+        Menu.$emit('collapse', this.collapse);
+      });
+    });
+    if (!this.headerHasMenu) {
+      this.siderMenu = menuLitst;
     }
+  },
 };
 </script>
 <style lang="scss" scoped>
 .sider-box {
   position: relative;
   width: 250px;
-  -webkit-transition: width .3s ease-in-out;
-  transition: width .3s ease-in-out;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 .sider-box.content-collapse {
   width: 65px;
@@ -76,7 +83,7 @@ export default {
   flex: 1;
   position: relative;
 }
-.main-conetnt{
+.main-conetnt {
   display: flex;
   position: absolute;
   top: 70px;

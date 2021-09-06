@@ -1,5 +1,5 @@
-const ParamsTypeList = ["GET", "PUT"];
+const ParamsTypeList = ['GET', 'PUT'];
 
 export default {
-  ParamsTypeList
-}
+  ParamsTypeList,
+};

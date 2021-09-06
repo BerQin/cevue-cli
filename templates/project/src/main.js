@@ -34,11 +34,11 @@ import { I18nService } from '@/service';
 import i18nText from './i18n';
 Vue.use(VueI18n);
 ServiceRegisterClass.register({
-  I18nService: new I18nService()
+  I18nService: new I18nService(),
 });
 Vue.prototype.$services.I18nService.i18n = new VueI18n({
   locale: 'zh',
-  messages: i18nText
+  messages: i18nText,
 });
 // endvue-i18n
 
@@ -51,12 +51,11 @@ import Directives from './directives';
 import '@/router/Interceptor.Router';
 
 // http
-import { api } from "./request";
+import { api } from './request';
 import { UserService } from './service';
 
-
 ServiceRegisterClass.register({
-  UserService: new UserService()
+  UserService: new UserService(),
 });
 
 Vue.config.productionTip = false;
@@ -65,13 +64,13 @@ Vue.prototype.$message = Message;
 
 // 加入所有的filter
 Object.keys(filters).forEach((key) => {
-  Vue.filter(key,filters[key]) //插入过滤器名和对应方法
-})
+  Vue.filter(key, filters[key]); //插入过滤器名和对应方法
+});
 
 Vue.use(ElementUI, {
   size: 'small',
   // vue-i18n
-  i18n: (key, value) => Vue.prototype.$services.I18nService.i18n.t(key, value)
+  i18n: (key, value) => Vue.prototype.$services.I18nService.i18n.t(key, value),
   // endvue-i18n
 });
 
@@ -83,9 +82,9 @@ Object.keys(Directives).forEach((key) => {
 });
 
 new Vue({
-    router,
-    // vue-i18n
-    i18n: Vue.prototype.$services.I18nService.i18n,
-    // endvue-i18n
-    render: h => h(App)
+  router,
+  // vue-i18n
+  i18n: Vue.prototype.$services.I18nService.i18n,
+  // endvue-i18n
+  render: (h) => h(App),
 }).$mount('#app');

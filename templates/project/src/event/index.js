@@ -1,5 +1,3 @@
 import Menu from './ChangeMenu';
 
-export {
-  Menu
-}
+export { Menu };

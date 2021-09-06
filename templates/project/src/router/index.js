@@ -9,36 +9,36 @@ import I18n from './I18n.RouteChild';
 Vue.use(Router);
 
 export default new Router({
-    routes: [
+  routes: [
+    {
+      path: '/',
+      redirect: '/index',
+    },
+    {
+      path: '/',
+      component: () => import('../components/Home.vue'),
+      meta: { title: '自述文件' },
+      children: [
+        ...Index,
+        ...Form,
+        ...Drag,
+        ...I18n,
+        ...Permission,
         {
-            path: '/',
-            redirect: '/index'
+          path: '/403',
+          component: () => import('../pages/403.vue'),
+          meta: { title: '403' },
         },
-        {
-            path: '/',
-            component: () => import('../components/Home.vue'),
-            meta: { title: '自述文件' },
-            children: [
-                ...Index,
-                ...Form,
-                ...Drag,
-                ...I18n,
-                ...Permission,
-                {
-                    path: '/403',
-                    component: () => import('../pages/403.vue'),
-                    meta: { title: '403' }
-                }
-            ]
-        },
-        {
-            path: '/login',
-            component: () => import('../pages/Login.vue'),
-            meta: { title: '登录' }
-        },
-        {
-            path: '*',
-            redirect: '/permission/404'
-        }
-    ]
+      ],
+    },
+    {
+      path: '/login',
+      component: () => import('../pages/Login.vue'),
+      meta: { title: '登录' },
+    },
+    {
+      path: '*',
+      redirect: '/permission/404',
+    },
+  ],
 });

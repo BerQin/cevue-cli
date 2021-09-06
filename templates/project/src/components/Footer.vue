@@ -5,17 +5,15 @@
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {};
 </script>
 
 <style lang="scss" scoped>
-.footer-box{
+.footer-box {
   line-height: 92px;
   text-align: center;
-  background: #F5F5F5;
-  border-top: 1px solid #E6E6E6;
+  background: #f5f5f5;
+  border-top: 1px solid #e6e6e6;
   color: #999;
 }
 </style>

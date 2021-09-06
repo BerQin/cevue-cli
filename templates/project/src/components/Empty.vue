@@ -1,18 +1,16 @@
 <template>
   <div class="empty">
-    <img src="../assets/img/empty.png" alt="empty">
+    <img src="../assets/img/empty.png" alt="empty" />
     <p>空空如也～</p>
   </div>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {};
 </script>
 
 <style lang="scss" scoped>
-.empty{
+.empty {
   text-align: center;
   padding: 30px 0;
 }

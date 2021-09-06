@@ -1,6 +1,8 @@
 module.exports = {
   tabWidth: 2,
   useTabs: false,
-  trailingComma: "none",
-  bracketSpacing: false
+  bracketSpacing: true,
+  singleQuote: true,
+  semi: true,
+  arrowParens: 'always',
 };

@@ -1,10 +1,10 @@
-import Vue from "vue";
+import Vue from 'vue';
 
-function ServiceRegisterClass () {
+function ServiceRegisterClass() {
   Vue.prototype.$services = {};
 }
 
-ServiceRegisterClass.prototype.register = function(servicesJson, namespace) {
+ServiceRegisterClass.prototype.register = function (servicesJson, namespace) {
   if (!namespace) {
     Object.keys(servicesJson).forEach((key) => {
       if (key && servicesJson[key]) {
@@ -12,6 +12,6 @@ ServiceRegisterClass.prototype.register = function(servicesJson, namespace) {
       }
     });
   }
-}
+};
 
 export default new ServiceRegisterClass();

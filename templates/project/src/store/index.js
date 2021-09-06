@@ -1,5 +1,3 @@
 import MenuList from './Menu.Const';
 
-export {
-  MenuList
-}
+export { MenuList };
