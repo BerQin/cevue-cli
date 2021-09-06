@@ -19,12 +19,12 @@ Element UI组件库地址<https://element.eleme.cn/#/zh-CN/component/quickstart>
 
 ### 项目结构
 
-> `public` 不经过编译的资源
-> `src` 项目目录
+> `public` 不经过编译的资源  
+> `src` 项目目录  
   >> `assets` 静态文件  
   >> `components` 中包含所有用到的组件(自行细分)  
   >> `core` 公共类和业务处理方法  
-    >>> `business` 业务类  
+    >>> `business` 业务类   
     >>> `common` 公共非业务类  
   >> `directive` 指令目录  
   >> `event` 事件创建目录（用于全局的自定义事件传递）  
