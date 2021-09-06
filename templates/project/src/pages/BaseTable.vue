@@ -229,6 +229,13 @@ export default {
       for (let i = 0; i < length; i++) {
         str += this.multipleSelection[i].name + ' ';
       }
+      // this.tableData.forEach((item, index) => {
+      //   let pass = false;
+      //   this.multipleSelection.forEach((delItem, i) => {
+      //     if (item.id === delItem.id) {
+      //     }
+      //   })
+      // });
       this.$message.error(`删除了${str}`);
       this.multipleSelection = [];
     },
